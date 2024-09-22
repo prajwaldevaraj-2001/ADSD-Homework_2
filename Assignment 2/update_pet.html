@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Pet</title>
+</head>
+<body>
+    <h1>Update Pet</h1>
+    <form method="POST">
+        <label for="name">Pet Name:</label>
+        <input type="text" name="name" id="name" value="{{ pet[1] }}">
+        <label for="kind_id">Kind:</label>
+        <select name="kind_id" id="kind_id">
+            {% for kind in kinds %}
+            <option value="{{ kind[0] }}" {% if kind[0] == pet[2] %}selected{% endif %}>{{ kind[1] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Update Pet</button>
+    </form>
+</body>
+</html>
