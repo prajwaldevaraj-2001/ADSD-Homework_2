@@ -1,1 +1,20 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets List</title>
+</head>
+<body>
+    <h1>Pets</h1>
+    <a href="/add">Add New Pet</a>
+    <ul>
+        {% for pet in pets %}
+        <li>{{ pet[1] }} - {{ pet[2] }}
+            <a href="/update/{{ pet[0] }}">Update</a>
+            <a href="/delete/{{ pet[0] }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
