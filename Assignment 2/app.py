@@ -29,10 +29,16 @@ def init_db():
 # Call this function to initialize the database tables
 init_db()
 
-from flask import Flask, request, render_template, redirect, url_for
-import sqlite3
+from flask import Flask
 
 app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Flask is running!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # Initialize the database
 def init_db():
